@@ -1,0 +1,20 @@
+<h1>Home</h1>
+<button (click)="kontakt()">Vis Tal</button>
+<div *ngIf="visElement">
+  <h3>Liste af tal</h3>
+  <div *ngFor="let item of numberList; let i = index">
+    <p>{{ item }} har index: {{ i }}</p>
+  </div>
+</div>
+
+<button (click)="test()">test</button>
+
+<button (click)="Writer('Log1')">Log1</button>
+<button (click)="Writer('Log2')">Log2</button>
+<button (click)="Writer('Log3')">Log3</button>
+
+<div>
+    <input type="text" [(ngModel)]="tekstStreng">
+    <button (click)="VisTekst()">Vis</button>
+    <p>{{tekstTilUdskrivning}}</p>
+</div>
