@@ -1,0 +1,49 @@
+<h1>Film Administration</h1>
+<form [formGroup]="filmForm" (ngSubmit)="TilfojFilm()">
+  <h3>Film Oprettelse</h3>
+  <p>Film Titel</p>
+  <input formControlName="Titel"/>
+  <p>Udgivelses år</p>
+  <input formControlName="UdgivelsesÅr"/>
+  <p>Genre</p>
+  <input formControlName="Genre"/>
+  <button type="submit">Tilføj</button>
+</form>
+
+<table class="film-table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Titel</th>
+            <th>UdgivelsesÅr</th>
+            <th>Genre</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let film of FilmListe">
+            <td>
+                {{film.FilmId}}
+            </td>
+            <td>
+                {{film.Titel}}
+            </td>
+            <td>
+                {{film.UdgivelsesAr}}
+            </td>
+            <td>
+                {{film.Genre}}
+            </td>
+            <!-- <td>
+                <button (click)="EditFilm(film.FilmId)"></button>
+            </td>
+            <td>
+                <button (click)="DeleteFilm(film.FilmId)"></button>
+            </td> -->
+        </tr>
+    </tbody>
+</table>
+
+<input type="text" [(ngModel)]="FormsmoduleVariabel">
+<button (click)="TestFormsModule()"></button>
