@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class FilmService {
   private filmField: Film[] = [
     { FilmId: 1, Titel: 'Harry Flemming', UdgivelsesAr: 2025, Genre: 'Kommedie' },
-    { FilmId: 2, Titel: 'Harry Flemming, og fangerne på tec', UdgivelsesAr: 2026, Genre: 'Gys' }
+    { FilmId: 2, Titel: 'Harry Flemming, og fangerne på Askeban', UdgivelsesAr: 2026, Genre: 'Gys' }
   ]
 
   private film$ = new BehaviorSubject<Film[]>(this.filmField);
@@ -28,7 +28,7 @@ export class FilmService {
   }
 
   putFilm(id:number, film: Film) {
-    
+
   }
 }
 
