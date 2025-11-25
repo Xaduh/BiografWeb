@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './home.css',
 })
 export class Home {
-  tekstStreng:string = 'tekst';
+  tekstStreng:string = '';
   tekstTilUdskrivning:string = '';
 
   visElement:boolean = false;
@@ -23,6 +23,7 @@ export class Home {
     name: 'Oliver'
   }
 
+  //#region variabler & metoder
   user2: UserClass = new UserClass('Oliver');
 
   test() {
@@ -44,9 +45,21 @@ export class Home {
   kontakt() {
     this.visElement = !this.visElement;
   }
-
+  //#endregion
   VisTekst() {
     this.tekstTilUdskrivning = this.tekstStreng;
+  }
+
+  GemTilSessionStorage() {
+    sessionStorage.setItem("HomeKey", this.tekstStreng);
+
+    localStorage.setItem("HomeKey", this.tekstStreng);
+  }
+
+  SkrivFraSessionStorage() {
+    this.tekstTilUdskrivning = sessionStorage.getItem("HomeKey") ?? 'NA';
+
+    this.tekstTilUdskrivning = localStorage.getItem("HomeKey") ?? 'NA';
   }
 
   ngOnInit() {
