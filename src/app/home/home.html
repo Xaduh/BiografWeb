@@ -15,8 +15,10 @@
 
 <div>
     <input type="text" [(ngModel)]="tekstStreng">
-    <button (click)="GemTilSessionStorage()">Vis</button>
+    <button (click)="GemTilStorage()">Gem</button>
 
-    <button (click)="SkrivFraSessionStorage()">Vis</button>
+    <button (click)="SkrivFraStorage()">Vis</button>
+
+    <button (click)="DeleteFraStorage()">Fjern</button>
     <p>{{tekstTilUdskrivning}}</p>
 </div>
